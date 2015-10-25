@@ -9,17 +9,14 @@ class Movie(object):
         title (str): Full title of the movie
         description (str): Description from IMDB
         poster_image_url (str/url): URL to cover art/poster image
-        trailer_url (str/url): URL to trailer
+        trailer_id (str/url): IMDB Video ID
     """
 
     def __init__(self):
-        """All init properties should be changed after instantiation, defaults
-        exist only to prevent null errors"""
-
         self.title = "Not found"
         self.description = "Not found"
-        self.poster_image_url = "http://lmvoa.com/widget/image/placeholder.png"
-        self.trailer_youtube_url = "https://www.youtube.com/embed/RDfjXj5EGqI"
+        self.poster_image_url = None
+        self.trailer_id = None
 
     @classmethod
     def from_code(cls, imdb_code):
@@ -51,18 +48,7 @@ class Movie(object):
 
         # Trailer URL
         trailer_xpath = '//*[@id="overview-bottom"]/a'
-        trailer_id = tree.xpath(trailer_xpath)[0].attrib['data-video']
-        movie.trailer_url = "http://www.imdb.com/video/imdb/{trailer_id!s}/imdb/embed?autoplay=false&width=640".format(**locals())
+        movie.trailer_id = tree.xpath(trailer_xpath)[0].attrib['data-video']
 
         return movie
 
-# Test Cases
-martian = "tt3659388"
-star_wars = "tt2488496"
-
-mov = Movie.from_code(star_wars)
-
-print mov.title
-print mov.description
-print mov.poster_image_url
-print mov.trailer_url
