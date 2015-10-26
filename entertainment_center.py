@@ -1,18 +1,19 @@
 from media import Movie
-from fresh_tomatoes import open_movies_page
 
-def generate_and_run():
-    codes = {
-            "The Martian": "tt3659388",
-            "Star Wars VII": "tt2488496",
-            "Mad Max: Fury Road": "tt1392190",
-            "Hunger Games: Catching Fire": "tt1951264",
-            "The Fog of War": "tt0317910",
-            "The Imitation Game": "tt2084970"
-            }
+def generate_movies(codes):
+    """Takes a dictionary of IMDB movie codes, generates their associated movie
+    objects and generates the Fresh Tomatoes site with that data.
 
+    Args:
+        codes (dict): A dictionary of codes with the following format
+            "Movie Name": "imdb_code",
+            "The Martian": "tt3659388"
+
+    Returns:
+        A list of movie objects
+    """
     movies = []
     for k, v in codes.iteritems():
         movies.append(Movie.from_code(v))
 
-    open_movies_page(movies)
+    return movies

@@ -54,7 +54,7 @@
             font-family: "Helvetica", "Arial", sans-serif;
         }
         a {
-            color:#222222;
+            color:#333333;
         }
         a:hover {
             text-decoration:none;
@@ -83,6 +83,7 @@
           $('.movie-tile').hide().first().show("fast", function showNext() {
             $(this).next("div").show("fast", showNext);
           });
+          // Enable popovers on hover
           $('[data-toggle="popover"]').popover({
             trigger: 'hover',
                 'placement': 'top'
@@ -146,10 +147,10 @@ A continuation of the saga created by George Lucas and set thirty years after St
 Katniss Everdeen and Peeta Mellark become targets of the Capitol after their victory in the 74th Hunger Games sparks a rebellion in the Districts of Panem.">The Hunger Games: Catching Fire</a></h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-id="vi1995571481" data-toggle="modal" data-target="#trailer">
-    <img src="http://ia.media-imdb.com/images/M/MV5BMTc3MTA4NDgzNl5BMl5BanBnXkFtZTcwOTAxNTQyMQ@@._V1_SY317_CR2,0,214,317_AL_.jpg" width="220" height="342">
-    <h2><a class="title-popover" href="#" title="The Fog of War: Eleven Lessons from the Life of Robert S. McNamara" data-toggle="popover" data-placement="bottom" data-content="
-A film about the former US Secretary of Defense and the various difficult lessons he learned about the nature and conduct of modern war.">The Fog of War: Eleven Lessons from the Life of Robert S. McNamara</a></h2>
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-id="vi1157933593" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_SX214_AL_.jpg" width="220" height="342">
+    <h2><a class="title-popover" href="#" title="The Grand Budapest Hotel" data-toggle="popover" data-placement="bottom" data-content="
+The adventures of Gustave H, a legendary concierge at a famous hotel from the fictional Republic of Zubrowka between the first and second World Wars, and Zero Moustafa, the lobby boy who becomes his most trusted friend.">The Grand Budapest Hotel</a></h2>
 </div>
 
     </div>

@@ -21,7 +21,15 @@ class Movie(object):
     @classmethod
     def from_code(cls, imdb_code):
         """Using an imdb movie code (eg. tt3659388) this pulls the xml,
-        scrapes the relevant data, and returns a new Movie instance using it"""
+        scrapes the relevant data, and returns a new Movie instance using it
+
+        Args:
+            imdb_code (str): IMDB URL code for the movie, typically of the form
+            "tt_______" with a numerical identifier after the 'tt'
+
+        Returns:
+            A new Movie instance with the scraped data
+        """
 
         imdb_url = "http://www.imdb.com/title/"
         movie_url = imdb_url + imdb_code
@@ -32,6 +40,8 @@ class Movie(object):
 
         movie = Movie()
 
+        # XPaths are consistent and easily fethced using Chrome's inspector
+
         # Title
         title_xpath = '//*[@id="overview-top"]/h1/span[1]//text()'
         movie.title = tree.xpath(title_xpath)[0]
@@ -39,6 +49,7 @@ class Movie(object):
         # Description
         description_xpath = '//*[@id="overview-top"]/p[2]'
         description_tree = tree.xpath(description_xpath)[0]
+        # Link tags break the scraping so we remove them
         etree.strip_tags(description_tree, 'a')
         movie.description = description_tree.text
 
@@ -48,7 +59,11 @@ class Movie(object):
 
         # Trailer URL
         trailer_xpath = '//*[@id="overview-bottom"]/a'
-        movie.trailer_id = tree.xpath(trailer_xpath)[0].attrib['data-video']
+        trailer_path = tree.xpath(trailer_xpath)
+        # If the title has no trailer this prevents it from crashing the program
+        if len(trailer_path) == 0:
+            movie.trailer_id = None
+        else:
+            movie.trailer_id = trailer_path[0].attrib['data-video']
 
         return movie
-
