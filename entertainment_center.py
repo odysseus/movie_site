@@ -6,7 +6,9 @@ def generate_and_run():
             "The Martian": "tt3659388",
             "Star Wars VII": "tt2488496",
             "Mad Max: Fury Road": "tt1392190",
-            "Hunger Games: Catching Fire": "tt1951264"
+            "Hunger Games: Catching Fire": "tt1951264",
+            "The Fog of War": "tt0317910",
+            "The Imitation Game": "tt2084970"
             }
 
     movies = []
