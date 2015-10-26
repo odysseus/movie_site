@@ -49,9 +49,15 @@
             top: 0;
             background-color: white;
         }
-
-        iframe {
-            overflow: hidden;
+        .popover-content {
+            font-size:14px;
+            font-family: "Helvetica", "Arial", sans-serif;
+        }
+        a {
+            color:#222222;
+        }
+        a:hover {
+            text-decoration:none;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -77,6 +83,10 @@
           $('.movie-tile').hide().first().show("fast", function showNext() {
             $(this).next("div").show("fast", showNext);
           });
+          $('[data-toggle="popover"]').popover({
+            trigger: 'hover',
+                'placement': 'top'
+            });
         });
     </script>
 </head>
@@ -108,32 +118,38 @@
       
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-id="vi3047862297" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMTUyMTE0ODcxNF5BMl5BanBnXkFtZTgwODE4NDQzNTE@._V1_SY317_CR2,0,214,317_AL_.jpg" width="220" height="342">
-    <h2>Mad Max: Fury Road</h2>
+    <h2><a class="title-popover" href="#" title="Mad Max: Fury Road" data-toggle="popover" data-placement="bottom" data-content="
+A woman rebels against a tyrannical ruler in post apocalyptic Australia in search for her homeland with the help of a group of female prisoners, a psychotic worshiper, and a drifter named Max.">Mad Max: Fury Road</a></h2>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-id="vi3398414105" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BNDkwNTEyMzkzNl5BMl5BanBnXkFtZTgwNTAwNzk3MjE@._V1_SY317_CR0,0,214,317_AL_.jpg" width="220" height="342">
-    <h2>The Imitation Game</h2>
+    <h2><a class="title-popover" href="#" title="The Imitation Game" data-toggle="popover" data-placement="bottom" data-content="
+During World War II, mathematician Alan Turing tries to crack the enigma code with help from fellow mathematicians.">The Imitation Game</a></h2>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-id="vi113423129" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMTc2MTQ3MDA1Nl5BMl5BanBnXkFtZTgwODA3OTI4NjE@._V1_SY317_CR0,0,214,317_AL_.jpg" width="220" height="342">
-    <h2>The Martian</h2>
+    <h2><a class="title-popover" href="#" title="The Martian" data-toggle="popover" data-placement="bottom" data-content="
+During a manned mission to Mars, Astronaut Mark Watney is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive.">The Martian</a></h2>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-id="vi3343889177" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMTkwNzAwNDA4N15BMl5BanBnXkFtZTgwMTA2MDcwNzE@._V1_SX214_AL_.jpg" width="220" height="342">
-    <h2>Star Wars: Episode VII - The Force Awakens</h2>
+    <h2><a class="title-popover" href="#" title="Star Wars: Episode VII - The Force Awakens" data-toggle="popover" data-placement="bottom" data-content="
+A continuation of the saga created by George Lucas and set thirty years after Star Wars: Episode VI - Return of the Jedi (1983).">Star Wars: Episode VII - The Force Awakens</a></h2>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-id="vi4243236889" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMTAyMjQ3OTAxMzNeQTJeQWpwZ15BbWU4MDU0NzA1MzAx._V1_SX214_AL_.jpg" width="220" height="342">
-    <h2>The Hunger Games: Catching Fire</h2>
+    <h2><a class="title-popover" href="#" title="The Hunger Games: Catching Fire" data-toggle="popover" data-placement="bottom" data-content="
+Katniss Everdeen and Peeta Mellark become targets of the Capitol after their victory in the 74th Hunger Games sparks a rebellion in the Districts of Panem.">The Hunger Games: Catching Fire</a></h2>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-id="vi1995571481" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMTc3MTA4NDgzNl5BMl5BanBnXkFtZTcwOTAxNTQyMQ@@._V1_SY317_CR2,0,214,317_AL_.jpg" width="220" height="342">
-    <h2>The Fog of War: Eleven Lessons from the Life of Robert S. McNamara</h2>
+    <h2><a class="title-popover" href="#" title="The Fog of War: Eleven Lessons from the Life of Robert S. McNamara" data-toggle="popover" data-placement="bottom" data-content="
+A film about the former US Secretary of Defense and the various difficult lessons he learned about the nature and conduct of modern war.">The Fog of War: Eleven Lessons from the Life of Robert S. McNamara</a></h2>
 </div>
 
     </div>

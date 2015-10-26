@@ -53,9 +53,15 @@ main_page_head = '''
             top: 0;
             background-color: white;
         }
-
-        iframe {
-            overflow: hidden;
+        .popover-content {
+            font-size:14px;
+            font-family: "Helvetica", "Arial", sans-serif;
+        }
+        a {
+            color:#333333;
+        }
+        a:hover {
+            text-decoration:none;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -81,6 +87,11 @@ main_page_head = '''
           $('.movie-tile').hide().first().show("fast", function showNext() {
             $(this).next("div").show("fast", showNext);
           });
+          // Enable popovers on hover
+          $('[data-toggle="popover"]').popover({
+            trigger: 'hover',
+                'placement': 'top'
+            });
         });
     </script>
 </head>
@@ -122,7 +133,7 @@ main_page_content = '''
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-id="{trailer_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+    <h2><a class="title-popover" href="#" title="{movie_title}" data-toggle="popover" data-placement="bottom" data-content="{movie_description}">{movie_title}</a></h2>
 </div>
 '''
 
@@ -133,6 +144,7 @@ def create_movie_tiles_content(movies):
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
+            movie_description=movie.description,
             poster_image_url=movie.poster_image_url,
             trailer_id=movie.trailer_id
         )
