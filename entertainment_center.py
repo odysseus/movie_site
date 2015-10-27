@@ -1,5 +1,6 @@
 from media import Movie
 
+
 def generate_movies(codes):
     """Takes a dictionary of IMDB movie codes, generates their associated movie
     objects and generates the Fresh Tomatoes site with that data.

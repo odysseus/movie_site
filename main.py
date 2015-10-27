@@ -10,11 +10,13 @@ codes = {
         "The Grand Budapest Hotel": "tt2278388"
         }
 
+
 def main():
     """Taking the list of codes from above, generates the movie objects and uses
     those to generate the Fresh Tomatoes page"""
     movies = generate_movies(codes)
     open_movies_page(movies)
+
 
 if __name__ == "__main__":
     main()
