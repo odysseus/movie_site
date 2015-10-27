@@ -2,6 +2,7 @@ from lxml import html
 from lxml import etree
 import requests
 
+
 class Movie(object):
     """Contains content used for displaying a single movie
 
@@ -12,11 +13,13 @@ class Movie(object):
         trailer_id (str/url): IMDB Video ID
     """
 
+
     def __init__(self):
         self.title = "Not found"
         self.description = "Not found"
         self.poster_image_url = None
         self.trailer_id = None
+
 
     @classmethod
     def from_code(cls, imdb_code):
