@@ -21,6 +21,6 @@ codes = {
         }
 ```
 
-The name keys in this dictionary exist solely for the programmer, to make keeping track of, adding, and removing movies easier. For the actual page content the program will use the title scraped from IMDB.
+The name keys in this dictionary exist solely for the programmer, to make keeping track of, adding, and removing movies easier. You should use something that identifies the movie, but it doesn't have to be perfect. For the actual page content the program will use the title scraped from IMDB.
 
 Once all the movies you want have been added, run the `main.py` file which will generate and open the site.
